@@ -85,7 +85,6 @@ public class MaterialTutorialPresenter implements MaterialTutorialContract.UserA
         if (position <= -1.0f || position >= 1.0f) { //if outside the screen do nothing
             Log.d(maLog, "case 1 outside");
             Log.d(maLog, "position: "+Float.toString(position));
-//      if (position <= -1.0f || position >= 1.0f) { //if outside the screen do nothing
 //            page.setAlpha(0);
         } else if (position == 0.0f) { //centered in screen
             Log.d(maLog, "case center");
@@ -95,7 +94,7 @@ public class MaterialTutorialPresenter implements MaterialTutorialContract.UserA
 //        } else if (position < 1.0f || position >-1.0f) {
             Log.d(maLog, "computation case");
             Log.d(maLog, "position: "+Float.toString(position));
-            Log.d(maLog, "translation: "+Float.toString((float) (position * 0.5 * pageWidth)));
+            Log.d(maLog, "translation: "+Float.toString((float) (position * 0.2 * pageWidth)));
 
             foreground.setTranslationX((float) (position * 0.2 * pageWidth));
             fadeNewColorIn(pagePosition, position);
@@ -103,46 +102,6 @@ public class MaterialTutorialPresenter implements MaterialTutorialContract.UserA
 
         }
     }
-
-/*    public void transformPage(View page, float position) {
-        int pageWidth = page.getWidth();
-        ImageView background = (ImageView) page.findViewById(R.id.fragment_help_tutorial_imageview_background);
-        ImageView foreground = (ImageView) page.findViewById(R.id.fragment_help_tutorial_imageview);
-
-        if (position < -1) { // [-Infinity,-1)
-            // This page is way off-screen to the left.
-            page.setAlpha(0);
-
-        } else if (position <= 1) { // [-1,1]
-
-
-            background.setTranslationX((float) (-(1 - position) * 0.5 * pageWidth));
-//            mBlurLabel.setTranslationX((float) (-(1 - position) * 0.5 * pageWidth));
-
-//            foreground.setTranslationX((float) (-(1 - position) * pageWidth));
-//            mDimLabel.setTranslationX((float) (-(1 - position) * pageWidth));
-
-//            mCheck.setTranslationX((float) (-(1 - position) * 1.5 * pageWidth));
-//            mDoneButton.setTranslationX((float) (-(1 - position) * 1.7 * pageWidth));
-            // The 0.5, 1.5, 1.7 values you see here are what makes the view move in a different speed.
-            // The bigger the number, the faster the view will translate.
-            // The result float is preceded by a minus because the views travel in the opposite direction of the movement.
-
-//            mFirstColor.setTranslationX((position) * (pageWidth / 4));
-
-//            mSecondColor.setTranslationX((position) * (pageWidth / 1));
-
-//            mTint.setTranslationX((position) * (pageWidth / 2));
-
-//            mDesaturate.setTranslationX((position) * (pageWidth / 1));
-            // This is another way to do it
-
-
-        } else { // (1,+Infinity]
-            // This page is way off-screen to the right.
-            page.setAlpha(0);
-        }
-    }*/
 
     @Override
     public int getNumberOfTutorials() {
