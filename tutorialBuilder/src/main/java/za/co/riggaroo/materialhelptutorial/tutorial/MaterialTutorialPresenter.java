@@ -88,18 +88,14 @@ public class MaterialTutorialPresenter implements MaterialTutorialContract.UserA
 //            page.setAlpha(0);
         } else if (position == 0.0f) { //centered in screen
             Log.d(maLog, "case center");
-
             tutorialView.setBackgroundColor(ContextCompat.getColor(context, tutorialItems.get(pagePosition).getBackgroundColor()));
         } else { //is on screen but not in center-->user is moving image
 //        } else if (position < 1.0f || position >-1.0f) {
             Log.d(maLog, "computation case");
             Log.d(maLog, "position: "+Float.toString(position));
             Log.d(maLog, "translation: "+Float.toString((float) (position * 0.2 * pageWidth)));
-
             foreground.setTranslationX((float) (position * 0.2 * pageWidth));
             fadeNewColorIn(pagePosition, position);
-
-
         }
     }
 
