@@ -25,3 +25,7 @@ dependencies {
     compile project(':materialhelptutorial')
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.AlBendin'
